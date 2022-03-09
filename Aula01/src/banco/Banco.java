@@ -3,15 +3,21 @@ package banco;
 public class Banco {
 	
 	public static void main(String[] args) {
-		Conta conta1 = new Conta("João Carlos");
-		Conta conta2 = new Conta();
+		ContaCorrente conta1 = new ContaCorrente();
+		new ContaPoupanca();
 		
+		conta1.setSaldo(1000);
+		System.out.println("Saldo da conta corrente = " + conta1.getSaldo());
 		
-		System.out.println(conta1.getTitular());
-		System.out.println(conta1.getTitular());
+		ContaVip conta2 = new ContaVip();
 		
-		System.out.println(conta2.getTitular());
-		System.out.println(conta2.getJuros());
+		conta2.setSaldo(1000);
+		conta2.setLimite(5000);
+		System.out.println("Saldo da conta vip = " + conta2.getSaldo());
+		
+		Conta.selic();
+		
+	
 	}
 
 }

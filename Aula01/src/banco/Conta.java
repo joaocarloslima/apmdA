@@ -1,32 +1,26 @@
 package banco;
 
-public class Conta {
+public abstract class Conta {
 	
 	//construtor padrão
-	
+	private static final int BANCO = 999;
 	private String titular; //atributo da classe
 	private int numero;
-	private double saldo;
-	private double juros;
+	protected double saldo;
 	
 	public Conta(String titular) { //sobrecarga de metodo
 		this.titular = titular;
-		this.juros = 1;
 	}
 	
 	public Conta() {
-		this.juros = 1;
+		
 	}
 	
-	public void setJuros(double juros) {
-		if (juros >= 0) {
-			this.juros = juros;
-		}
+	public static void selic() {
+		
 	}
 	
-	public double getJuros() {
-		return juros;
-	}
+	//public abstract void validarCliente();
 	
 	public void setTitular(String titular /*parametro do metodo*/) {
 		this.titular = titular;
@@ -35,5 +29,23 @@ public class Conta {
 	public String getTitular() {
 		return titular;
 	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+	
+	
 
 }
