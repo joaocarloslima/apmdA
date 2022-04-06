@@ -3,7 +3,15 @@ package empolyeee;
 public final class Presidente extends Empregado implements Autenticavel {
 
 	public double cotaDeAcoes;
-	private String senha;
+	public Autenticador autenticador = new Autenticador();
+	
+	public void setSenha(String senha) {
+		autenticador.setSenha(senha);
+	}
+
+	public boolean autenticar(String senha) {
+		return autenticador.autenticar(senha);
+	}
 
 	@Override
 	public double calcularSalario() {
@@ -18,18 +26,6 @@ public final class Presidente extends Empregado implements Autenticavel {
 		this.cotaDeAcoes = cotaDeAcoes;
 	}
 
-	@Override
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
 
-	@Override
-	public boolean autenticar(String senha) {
-		if (this.senha.equals(senha)) {
-			return true;
-		}else {
-			return false;
-		}
-	}
 
 }
