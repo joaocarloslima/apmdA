@@ -12,9 +12,13 @@ public class RecursosHumanos {
 		Gerente gerente = new Gerente();
 		gerente.setCodigo(23003);
 		gerente.setNome("Fabiana Souza");
+		
+		Presidente presidente = new Presidente();
 
 	
 		FolhaDePagamento folhaDePagamento = new FolhaDePagamento();
+		folhaDePagamento.logar(presidente);
+		folhaDePagamento.logar(gerente);
 
 		
 		System.out.println(folhaDePagamento.getValorTotalDaFolhaDePagamento());

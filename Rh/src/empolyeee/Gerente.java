@@ -1,9 +1,10 @@
 package empolyeee;
 
-public class Gerente extends Empregado {
+public class Gerente extends Empregado implements Autenticavel {
 
 	private String area;
 	private double bonus;
+	private String senha;
 
 	@Override
 	public double calcularSalario() {
@@ -24,6 +25,21 @@ public class Gerente extends Empregado {
 
 	public void setBonus(double bonus) {
 		this.bonus = bonus;
+	}
+
+	@Override
+	public void setSenha(String senha) {
+		this.senha = senha;
+		
+	}
+
+	@Override
+	public boolean autenticar(String senha) {
+		if(this.senha.equals(senha)) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 }
