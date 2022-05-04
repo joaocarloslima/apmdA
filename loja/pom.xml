@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.com.fiap</groupId>
+  <artifactId>loja</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>loja</name>
+  
+  <dependencies>
+
+	<!-- JPA -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-entitymanager</artifactId>
+	    <version>5.6.8.Final</version>
+	</dependency>
+	
+	<!-- H2 Database -->
+	<dependency>
+	    <groupId>com.h2database</groupId>
+	    <artifactId>h2</artifactId>
+	    <version>2.1.212</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<!-- Oracle Drive -->
+	<dependency>
+	    <groupId>com.oracle.database.jdbc</groupId>
+	    <artifactId>ojdbc8</artifactId>
+	    <version>21.5.0.0</version>
+	</dependency>
+	
+	
+	
+  	
+  </dependencies>
+  
+</project>
