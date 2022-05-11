@@ -1,5 +1,7 @@
 package br.com.fiap.loja.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -7,13 +9,13 @@ import javax.persistence.Persistence;
 import br.com.fiap.loja.model.Produto;
 
 public class ProdutoDao {
+
+	// criar um gerente de entidades
+	EntityManagerFactory factory = 
+			Persistence.createEntityManagerFactory("loja");
+	EntityManager manager = factory.createEntityManager();
 	
 	public void cadastrar(Produto produto) {
-		// criar um gerente de entidades
-		EntityManagerFactory factory = 
-				Persistence.createEntityManagerFactory("loja");
-		EntityManager manager = factory.createEntityManager();
-		
 		// iniciar a transacao
 		manager.getTransaction().begin();
 		
@@ -25,5 +27,38 @@ public class ProdutoDao {
 		manager.close();
 		
 	}
+	
+	
+	public List<Produto> listarTodos() {
+
+		return manager
+			.createQuery("SELECT p FROM Produto p", Produto.class)
+			.getResultList();
+		
+		
+	}
+	
+	public List<Produto> buscarPorNome(String nome){
+		
+		 return manager
+			.createQuery("SELECT p FROM Produto p WHERE nome=:nome", Produto.class)
+			.setParameter("nome", nome)
+			.getResultList();
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
