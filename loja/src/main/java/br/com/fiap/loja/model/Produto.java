@@ -1,6 +1,7 @@
 package br.com.fiap.loja.model;
 
 import java.math.BigDecimal;
+import java.util.Vector;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -55,6 +56,15 @@ public class Produto {
 		return "Nome = " + nome + 
 				" Preco = " + preco + 
 				" Descricao = " + descricao;
+	}
+
+	public Vector<String> getData() {
+		Vector<String> data = new Vector<String>();
+		data.add(codigo.toString());
+		data.add(nome);
+		data.add(descricao);
+		data.add(preco.toString());
+		return data;
 	}
 
 }

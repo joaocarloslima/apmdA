@@ -46,6 +46,15 @@ public class ProdutoDao {
 			.getResultList();
 	
 	}
+
+
+	public void apagar(Long id) {
+		Produto produto = manager.find(Produto.class, id);
+		
+		manager.getTransaction().begin();
+		manager.remove(produto);
+		manager.getTransaction().commit();
+	}
 	
 	
 	
