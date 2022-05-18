@@ -56,6 +56,12 @@ public class ProdutoDao {
 		manager.getTransaction().commit();
 	}
 	
+	public void atualizar(Produto produto) {
+		manager.getTransaction().begin();
+		manager.merge(produto);
+		manager.getTransaction().commit();
+	}
+	
 	
 	
 	
